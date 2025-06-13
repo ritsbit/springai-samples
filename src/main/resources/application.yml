@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /springai-samples
+spring:
+  application:
+    name: springai-samples
+  ai:
+    chat:
+      client:
+        enabled: false
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+    mcp:
+      server:
+        base-url: mcp
+        enabled: true
+        type: sync
+        version: 1.0.0
+        capabilities:
+          tool: true
+          completion: true
+          prompt: true
+          resource: true
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
